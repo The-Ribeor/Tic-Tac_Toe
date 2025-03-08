@@ -1,7 +1,14 @@
 
 # Tic Tac Toe en React Native
 
-¡Bienvenido al proyecto de Tic Tac Toe (Tres en Raya) desarrollado en React Native y Expo! Este es un juego clásico de Tic Tac Toe que puedes jugar en dos modos: Jugador vs Jugador (PVP) y Jugador vs Máquina (AI).
+¡Bienvenido al proyecto de Tic Tac Toe (Tres en Raya) desarrollado en React Native y Expo! Este es un juego clásico de Tic Tac Toe que puedes jugar en dos modos: Jugador vs Jugador (PVP) y Jugador vs Máquina.
+
+### Expo Snack  
+
+Prueba la versión interactiva del juego **Tic Tac Toe** en Expo Snack:  
+
+➡️ [Tic Tac Toe - Expo Snack](https://snack.expo.dev/@diegoberrio1601/tic-tac-toue)  
+
 
 ## Características
 
