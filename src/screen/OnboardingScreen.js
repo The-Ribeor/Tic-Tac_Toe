@@ -8,10 +8,11 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
-import { Footer } from "../components/Footer";
+// import } from '../components/Footer'
 import { useNavigation } from "@react-navigation/native";
+import { Footer } from "../components/Footer";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 const slides = [
   {
@@ -93,13 +94,12 @@ export function OnboardingScreen() {
         ))}
       </ScrollView>
 
-      {/* Botón de siguiente */}
       <TouchableOpacity style={styles.button} onPress={nextSlide}>
         <Text style={styles.buttonText}>
           {index < slides.length - 1 ? "Siguiente" : "Comenzar"}
         </Text>
       </TouchableOpacity>
-      <Footer />
+      <Footer/>
     </View>
   );
 }
@@ -114,52 +114,54 @@ const styles = StyleSheet.create({
   },
   slide: {
     width,
+    flex: 1, // Hace que cada slide ocupe el alto completo
     justifyContent: "center",
-    paddingHorizontal: 20,
+    paddingHorizontal: width * 0.05, // Se ajusta dinámicamente según el ancho
   },
   image: {
-    width: 320,
-    height: 320,
+    width: width * 0.7, // Se ajusta al 70% del ancho de la pantalla
+    height: height * 0.35, // Se ajusta al 35% del alto de la pantalla
     resizeMode: "contain",
-    marginBottom: 10,
     alignSelf: "center",
-    marginBottom: 50,
+    marginBottom: height * 0.05, // Espaciado relativo al alto de la pantalla
   },
   indicators: {
     flexDirection: "row",
-    marginBottom: 30,
+    marginBottom: height * 0.03, // Ajuste dinámico
   },
   dot: {
-    width: 50,
+    width: width * 0.1, // Tamaño de puntos responsivo
     height: 7,
     borderRadius: 5,
     marginHorizontal: 5,
   },
   title: {
-    fontSize: 41,
+    fontSize: width * 0.1, // Ajuste dinámico según el ancho de la pantalla
     fontFamily: "Poppins-Bold",
     color: "#fff",
   },
   subTitle: {
-    fontSize: 30,
+    fontSize: width * 0.08, // Ajuste dinámico
     fontFamily: "Poppins-Bold",
     color: "#fff",
   },
   description: {
-    marginTop: 10,
-    fontSize: 20,
+    marginTop: height * 0.02,
+    fontSize: width * 0.05,
     fontFamily: "Poppins-Regular",
     color: "#fff",
   },
   button: {
     backgroundColor: "#3C4FFF",
-    padding: 15,
+    paddingVertical: height * 0.02, // Ajuste dinámico
+    paddingHorizontal: width * 0.2,
     borderRadius: 10,
     width: "80%",
+    marginTop: height * 0.02,
   },
   buttonText: {
     color: "#fff",
-    fontSize: 20,
+    fontSize: width * 0.05,
     fontFamily: "Poppins-SemiBold",
     textAlign: "center",
   },

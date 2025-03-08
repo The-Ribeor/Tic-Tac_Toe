@@ -12,15 +12,23 @@ export const GameModeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Elige cómo{"\n"}quieres jugar</Text>
-      <Text style={styles.subTitle}>Modos de juego</Text>
-      <View style={styles.content}>
-        <TouchableOpacity style={styles.button} onPress={() => goToGame("PVP")}>
-          <Text style={styles.buttonText}>Uno VS Uno</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => goToGame("AI")}>
-          <Text style={styles.buttonText}>Uno VS Máquina</Text>
-        </TouchableOpacity>
+      <View style={styles.mainContent}>
+        <Text style={styles.title}>Elige cómo{"\n"}quieres jugar</Text>
+        <Text style={styles.subTitle}>Modos de juego</Text>
+        <View style={styles.content}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => goToGame("PVP")}
+          >
+            <Text style={styles.buttonText}>Uno VS Uno</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => goToGame("AI")}
+          >
+            <Text style={styles.buttonText}>Uno VS Máquina</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <Footer />
     </View>
@@ -30,37 +38,47 @@ export const GameModeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#191B1F",
+    paddingBottom: 20,
+  },
+  mainContent: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     color: "#FFF",
     fontFamily: "Poppins-Bold",
     fontSize: 31,
     textAlign: "center",
-    marginBottom: 70,
+    marginBottom: 50,
   },
   subTitle: {
     color: "#FFF",
     fontFamily: "Poppins-Semibold",
     fontSize: 26,
     textAlign: "center",
-    marginBottom: 40,
+    marginBottom: 30,
   },
   content: {
     backgroundColor: "#252A34",
     borderRadius: 20,
-    height: 250,
     width: "80%",
-    padding: 40,
-    justifyContent: "space-between",
-    marginBottom: 30,
+    paddingVertical: 40,
+    paddingHorizontal: 20,
+    alignItems: "center",
+    marginBottom: 20,
+    gap: 20, // Añade espacio entre los botones
   },
   button: {
     backgroundColor: "#161A22",
-    padding: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 30,
     borderRadius: 10,
+    alignItems: "center",
+    width: "100%",
   },
   buttonText: {
     color: "#fff",
@@ -69,3 +87,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+export default GameModeScreen;
